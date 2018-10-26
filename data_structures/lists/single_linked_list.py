@@ -1,4 +1,4 @@
-from node import Node
+from .node import Node
 
 
 class SingleLinkedListIterator:
@@ -201,8 +201,5 @@ class SingleLinkedList:
             current_node = current_node.next
 
 
-if __name__ == '__main__':
-    l = SingleLinkedList()
-    for i in range(10):
-        l.push_front(i)
+
 
