@@ -1,6 +1,6 @@
 from .bubble_sort import bubble_sort
 from .selection_sort import selection_sort
-
+from .insertion_sort import insertion_sort
 def test_bubble():
     l = list(range(9, -1, -1))
     l = bubble_sort(l)
@@ -19,3 +19,10 @@ def test_selection():
     l = selection_sort(l)
 
     assert l == [0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]
+
+def test_insertion():
+    l = [4, 3, 2, 1, 1, 2, 3, 0, 3, 2, 1, 0]
+    l = selection_sort(l)
+
+    assert [0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4] == l
+
