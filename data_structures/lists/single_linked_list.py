@@ -34,6 +34,12 @@ class SingleLinkedList:
         list_str = list_str[1:-1]
         return '[' + list_str +']'
 
+    def __getitem__(self, index):
+        return self.value_at(index)
+
+    def __setitem__(self, index, value):
+        self.insert(index, value)
+
     def size(self):
         """returns number of data elements in list"""
         return self.length
@@ -199,4 +205,4 @@ if __name__ == '__main__':
     l = SingleLinkedList()
     for i in range(10):
         l.push_front(i)
-    print(l)
+
