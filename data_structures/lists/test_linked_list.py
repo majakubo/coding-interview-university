@@ -1,4 +1,4 @@
-from .single_linked_list import SingleLinkedList
+from single_linked_list import SingleLinkedList
 
 
 def test_push_front():
@@ -198,20 +198,23 @@ def test_reverse():
     l.reverse()
 
     assert l.head.data == 0
-    assert l.tail.data == 5
+    assert l.tail.data == 4
+    assert l.tail.next == None
 
     for i in range(5):
-        assert l.value_at(i), i
+        assert l.pop_front() == i
+
+
 
 
 def test_remove_value_front():
-    l = SingleLinkedList
+    l = SingleLinkedList()
     for i in range(5):
         l.push_back(i)
 
     l.remove_value(0)
 
-    assert l.head.data == 2
+    assert l.head.data == 1
 
 
 def test_remove_value_middle():
@@ -219,9 +222,9 @@ def test_remove_value_middle():
     for i in range(5):
         l.push_back(i)
 
-    l.remove_value(1)
+    l.remove_value(2)
 
-    assert l.head.next == 3
+    assert l.head.next.next.data == 3
 
 
 def test_remove_value_back():

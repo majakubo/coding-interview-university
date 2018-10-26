@@ -1,4 +1,4 @@
-from .node import Node
+from node import Node
 
 
 class SingleLinkedList:
@@ -134,8 +134,46 @@ class SingleLinkedList:
 
     def reverse(self):
         """reverses the list"""
-        pass
+        if self.length == 0:
+            return
+
+        before_current = None
+        current_node = self.head
+
+        while current_node != None:
+            next_node = current_node.next
+            current_node.next = before_current
+            before_current = current_node
+            current_node = next_node
+
+        self.head, self.tail = self.tail, self.head
+        
 
     def remove_value(self, value):
         """removes first node that has value equal to given one"""
-        pass
+        if self.head.data == value:
+            self.pop_front()
+            return
+
+        before_node = self.head
+        current_node = self.head.next
+
+        while current_node != None:
+            if current_node.data == value:
+                if current_node == self.tail:
+                    self.pop_back()
+                    return
+
+                before_node.next = current_node.next
+                self.length -= 1
+                break
+
+            before_node = current_node
+            current_node = current_node.next
+
+
+
+
+
+if __name__ == '__main__':
+    l = SingleLinkedList()
