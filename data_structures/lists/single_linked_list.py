@@ -8,7 +8,7 @@ class SingleLinkedList:
         self.tail = None
         if sequence:
             for element in sequence:
-                self.push_front(element)
+                self.push_back(element)
 
     def size(self):
         """returns number of data elements in list"""
@@ -147,7 +147,6 @@ class SingleLinkedList:
             current_node = next_node
 
         self.head, self.tail = self.tail, self.head
-        
 
     def remove_value(self, value):
         """removes first node that has value equal to given one"""
@@ -172,8 +171,3 @@ class SingleLinkedList:
             current_node = current_node.next
 
 
-
-
-
-if __name__ == '__main__':
-    l = SingleLinkedList()

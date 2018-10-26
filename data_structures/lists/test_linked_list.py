@@ -235,3 +235,11 @@ def test_remove_value_back():
     l.remove_value(4)
 
     assert l.tail.data == 3
+
+
+def test_seq_constructor():
+    l = SingleLinkedList([0, 1, 2, 3, 4])
+
+    for i in range(5):
+        assert i == l.pop_front()
+
