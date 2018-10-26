@@ -145,9 +145,3 @@ class DoubleLinkedList:
         """returns value at given index"""
         return self.node_at(index).data
 
-if __name__ == '__main__':
-    dl = DoubleLinkedList()
-    for i in range(10):
-        dl.push_back(i)
-
-    print(dl)

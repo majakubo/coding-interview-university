@@ -104,4 +104,13 @@ def test_value_at():
 
     assert dl.value_at(4) == 4
 
+
 def test_insert():
+    dl = DoubleLinkedList()
+    for i in range(10):
+        dl.push_back(i)
+
+    dl[2] = 4
+    dl[0] = 1
+    assert dl[3] == 4
+    assert dl[0] == 1
