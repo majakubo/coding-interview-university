@@ -9,8 +9,3 @@ def heap_sort(sequence):
 
     return l
 
-if __name__ == '__main__':
-    l = [1, 2, 3, 4, 3, 2, 1]
-    g = heap_sort(l)
-
-    print(g)

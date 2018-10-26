@@ -1,3 +1,4 @@
+"""not implemented yet"""
 def parent(index):
     return index // 2
 
@@ -69,13 +70,6 @@ class BinaryHeap:
     def get_min(self):
         return self.heap[1]
 
-
-if __name__ == '__main__':
-    hp = BinaryHeap()
-    for i in range(50, 0, -1):
-        hp.insert_key(i)
-
-    for i in range(1,51):
-        print(hp.extract_min())
-
+    def is_empty(self):
+        return True if self.length == 1 else False
 

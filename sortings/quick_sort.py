@@ -1,2 +1,1 @@
-def quick_sort(sequence):
-    pass
+"""not implemented yet"""
