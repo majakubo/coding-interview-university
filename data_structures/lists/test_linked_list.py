@@ -1,4 +1,4 @@
-from single_linked_list import SingleLinkedList
+from single_linked_list import SingleLinkedList, SingleLinkedListIterator
 
 
 def test_push_front():
@@ -240,6 +240,16 @@ def test_remove_value_back():
 def test_seq_constructor():
     l = SingleLinkedList([0, 1, 2, 3, 4])
 
+    assert l.length == 5
+
     for i in range(5):
         assert i == l.pop_front()
 
+
+
+def test_iteration():
+    l = SingleLinkedList([0, 1, 2, 3, 4, 5])
+    i = 0
+    for element in l:
+        assert element == i
+        i += 1

@@ -1,6 +1,19 @@
 from node import Node
 
 
+class SingleLinkedListIterator:
+    def __init__(self, current_node):
+        self.current_node = current_node
+
+    def __next__(self):
+        if self.current_node == None:
+            raise StopIteration
+        else:
+            buffer = self.current_node
+            self.current_node = self.current_node.next
+            return buffer.data
+
+
 class SingleLinkedList:
     def __init__(self, sequence=None):
         self.length = 0
@@ -9,6 +22,17 @@ class SingleLinkedList:
         if sequence:
             for element in sequence:
                 self.push_back(element)
+
+    def __iter__(self):
+        return SingleLinkedListIterator(self.head)
+
+    def __str__(self):
+        list_str = ''
+        for element in self:
+            list_str += ' ' + str(element) + ','
+
+        list_str = list_str[1:-1]
+        return '[' + list_str +']'
 
     def size(self):
         """returns number of data elements in list"""
@@ -171,3 +195,8 @@ class SingleLinkedList:
             current_node = current_node.next
 
 
+if __name__ == '__main__':
+    l = SingleLinkedList()
+    for i in range(10):
+        l.push_front(i)
+    print(l)
