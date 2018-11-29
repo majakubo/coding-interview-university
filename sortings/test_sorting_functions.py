@@ -3,6 +3,8 @@ from .selection_sort import selection_sort
 from .insertion_sort import insertion_sort
 from .merge_sort import merge_sort
 from .heap_sort import heap_sort
+from .quick_sort import quick_sort
+
 
 def test_bubble():
     l = list(range(9, -1, -1))
@@ -43,7 +45,15 @@ def test_heap_sort():
 
     assert l == list(range(0, 51))
 
+
 def test_merge_sort():
     l = [5, 4, 3, 2, 2, 1, 0, 1, 2, 3, 4, 5]
     l = merge_sort(l)
     assert l == [0, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5]
+
+
+def test_quick_sort():
+    l = [6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 5, 4, 3]
+    l = quick_sort(l)
+    assert [0, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6]
+   
