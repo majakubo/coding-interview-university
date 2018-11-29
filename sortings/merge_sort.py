@@ -2,8 +2,8 @@ def merge_sort(sequence):
     """simple merge sort on additional lists"""
     if len(sequence) > 1:
         middle = len(sequence) // 2
-        left = merge_sort_dumb(sequence[:middle])
-        right = merge_sort_dumb(sequence[middle:])
+        left = merge_sort(sequence[:middle])
+        right = merge_sort(sequence[middle:])
         merged = []
         while left and right:
             if left < right:

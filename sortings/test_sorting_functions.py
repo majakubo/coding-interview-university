@@ -42,3 +42,8 @@ def test_heap_sort():
     l = heap_sort(l)
 
     assert l == list(range(0, 51))
+
+def test_merge_sort():
+    l = [5, 4, 3, 2, 2, 1, 0, 1, 2, 3, 4, 5]
+    l = merge_sort(l)
+    assert l == [0, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5]
